@@ -1,0 +1,94 @@
+.hbw-placeholder {
+  .icon {
+    fill: #f1f1f1;
+    color: #f1f1f1;
+    margin: 0 10px;
+  }
+  &.full {
+    width: 100%;
+  }
+  .placeholder {
+    &-title {
+      height: 14px;
+      width: 180px;
+      max-width: 100%;
+    }
+    &-subtitle {
+      height: 11px;
+      width: 150px;
+      max-width: 100%;
+    }
+    &-text {
+      height: 12px;
+      width: 40px;
+    }
+    &-rounded {
+      height: 8px;
+      border-radius: 10px;
+      width: 100px;
+      background: #f1f1f1;
+    }
+  }
+  &.practice-question {
+    min-height: 400px;
+    .placeholder-title {
+      height: 20px;
+      width: 80%;
+    }
+    .placeholder-text {
+      height: 25px;
+    }
+  }
+  .placeholder-fade {
+    background: linear-gradient(-45deg, #f1f1f1, lighten(#f1f1f1, 4%), #f1f1f1);
+    background-size: 300% 300%;
+    -webkit-animation: Gradient 9s ease infinite;
+    -moz-animation: Gradient 9s ease infinite;
+    animation: Gradient 9s ease infinite;
+  }
+  .placeholder-100 {
+    width: 100%;
+  }
+  .placeholder-80 {
+    width: 80%;
+  }
+  .placeholder-50 {
+    width: 50%;
+  }
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

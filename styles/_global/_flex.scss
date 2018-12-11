@@ -1,0 +1,100 @@
+/* Flex
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.flex-row {
+  @include flexbox;
+  @include flex-flow(row wrap);
+  &.reverse {
+    @include flex-direction(row-reverse);
+  }
+}
+.flex-column {
+  @include flexbox;
+  @include flex-flow(column wrap);
+  &.reverse {
+    @include flex-direction(column-reverse);
+  }
+}
+.flex-nowrap {
+  @include flex-wrap(nowrap);
+}
+.align-start {
+  @include align-items(flex-start);
+}
+.align-end {
+  @include align-items(flex-end);
+}
+.align-center {
+  @include align-items(center);
+}
+.align-stretch {
+  @include align-items(stretch);
+}
+.align-space > div {
+  margin: 1rem 0;
+}
+.align-space-sm > div {
+  margin: 0.5rem 0;
+}
+.align-space-lg > div {
+  margin: 1.5rem 0;
+}
+.justify-space-around {
+  @include justify-content(space-around);
+}
+.justify-space-evenly {
+  @include justify-content(space-evenly);
+}
+.justify-space-between {
+  @include justify-content(space-between);
+}
+.justify-start {
+  @include justify-content(flex-start);
+}
+.justify-end {
+  @include justify-content(flex-end);
+}
+.justify-center {
+  @include justify-content(center);
+}
+
+.justify-space-sm {
+  > button,
+  > a,
+  > div {
+    margin: 0 0.5rem;
+  }
+}
+.justify-space-lg {
+  > button,
+  > a,
+  > div {
+    margin: 0 1.5rem;
+  }
+}
+.justify-space {
+  > button,
+  > a,
+  > div {
+    margin: 0 1rem;
+  }
+}
+.flex-center {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+}
+.flex-auto {
+  @include flex(1 1 auto);
+}
+.flex-1 {
+  @include flex(1);
+}
+.flex-2 {
+  @include flex(2);
+}
+.flex-3 {
+  @include flex(3);
+}
+.flex-4 {
+  @include flex(4);
+}

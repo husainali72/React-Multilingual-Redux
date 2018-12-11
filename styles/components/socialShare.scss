@@ -1,0 +1,115 @@
+.hbw-social-share {
+  position: relative;
+  margin-right: 5px;
+  display: inline-block;
+  clear: both;
+  i.fa {
+    cursor: pointer;
+    color: #777;
+  }
+  i.fa:hover {
+    color: #444;
+  }
+  .share-box {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    margin-bottom: 2px;
+    bottom: 100%;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 8px 10px;
+    transform: translateY(-25px);
+    border-radius: 3px;
+    display: flex;
+    flex-flow: column;
+    z-index: 998;
+    .share-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    &:hover {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 10px;
+      transform-origin: 50% 50%;
+      transform: rotate(45deg);
+      top: 100%;
+      margin: -5px 0 0 0;
+      left: 8px;
+      background: #fff;
+      box-shadow: 3px 2px 5px -1px rgba(0, 0, 0, 0.1);
+    }
+    i {
+      font-size: 1.4em;
+      margin: 0 7px;
+      opacity: 1;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    i.fa-facebook {
+      color: #3b5998;
+    }
+    i.fa-twitter {
+      color: #00b6f1;
+    }
+    i.fa-google-plus {
+      color: #df4a32;
+    }
+    i.fa-linkedin {
+      color: #007bb6;
+    }
+    a.fa-whatsapp {
+      color: #25d366;
+      font-size: 1.4em;
+      margin: 0 7px;
+    }
+    .share-link {
+      position: relative;
+      width: 250px;
+      input {
+        height: 32px;
+        margin-top: 5px;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 0.9em;
+        direction: ltr;
+        padding: 0 26px 0 5px;
+      }
+      i.fa {
+        position: absolute;
+        right: 0px;
+        bottom: 5px;
+        height: 28px;
+        width: 28px;
+        font-size: 14px;
+        height: 22px;
+        width: 22px;
+        line-height: 24px;
+        margin: 0px 6px;
+        background: rgba(0, 183, 199, 0.5);
+        color: #fff;
+        border-radius: 3px;
+        &:hover {
+          background: rgba(0, 183, 199, 1);
+        }
+      }
+    }
+  }
+  &:hover .share-box {
+    opacity: 1;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}

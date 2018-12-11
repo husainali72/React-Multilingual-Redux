@@ -1,0 +1,23 @@
+.squircle-group-icon {
+  height: 72px;
+  width: 72px;
+  position: relative;
+  text-align: center;
+  .icon-squircle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    stroke: #fff;
+    stroke-width: 2px;
+  }
+  .icon:not(.icon-squircle) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+    fill: #fff;
+    stroke: #fff;
+  }
+}

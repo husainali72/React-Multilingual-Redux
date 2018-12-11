@@ -1,0 +1,137 @@
+.notifications {
+  &-wrapper {
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    margin: 0 10px 0 20px;
+    .nav-notification-icon {
+      cursor: pointer;
+      position: relative;
+      font-size: 2.2rem;
+      color: color(brand, light);
+      .icon {
+        height: 28px;
+        fill: color(brand, light);
+      }
+      .hbw-badge {
+        position: absolute;
+        right: -6px;
+        bottom: -2px;
+      }
+    }
+  }
+}
+.notification {
+  &-list {
+    width: 400px;
+    max-height: 350px;
+    overflow: auto;
+    @include bp($mob) {
+      width: 350px;
+    }
+    .no-data {
+      color: color(text, light);
+    }
+    .friend-request {
+      &-container {
+        padding: 5px 0;
+        .hbw-card-header {
+          padding: 0 15px;
+        }
+        @include bp($mobile) {
+          .hbw-card-header {
+            text-align: center;
+          }
+        }
+        .hr {
+          background: linear-gradient(
+            to left,
+            rgba(212, 212, 220, 0.8),
+            rgba(212, 212, 220, 0.8),
+            rgba(212, 212, 220, 0.8)
+          );
+        }
+        .seperator {
+          background: rgb(251, 251, 251);
+          height: 10px;
+        }
+      }
+      &-item {
+        @include flex-grow(1);
+        padding: 15px 10px 15px 15px;
+        &.new-notification {
+          background-image: linear-gradient(to left, rgba(230, 230, 230, 0.8), rgba(230, 230, 230, 0.4), transparent);
+        }
+        .icon {
+          @include flex-shrink(0);
+          height: 18px;
+          margin: 0 2px;
+          &.icon-live-class {
+            fill: color(red);
+            stroke: color(red);
+          }
+          &.icon-user {
+            fill: color(brand);
+            stroke: color(brand);
+          }
+          &.icon-group-class {
+            fill: color(brand);
+            stroke: color(brand);
+          }
+          &.icon-competition {
+            fill: #fbc05f;
+            stroke: #fbc05f;
+          }
+        }
+        .notification-time {
+          font-size: 1.1rem;
+          color: text(color, light);
+          span {
+            display: inline-block;
+            white-space: nowrap;
+            padding: 0 0 0 5px;
+          }
+        }
+        .hbw-btn {
+          .icon {
+            height: 14px;
+          }
+          .icon-loader {
+            height: 14px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.empty-slate {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+@include rtl {
+  .notifications-wrapper {
+    margin: 0 20px 0 0;
+    .notification-list {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+      .notification-time {
+        span {
+          padding: 0 5px 0 0;
+        }
+      }
+      @include bp($mob) {
+        right: auto;
+        width: 96vw;
+        transform: translateX(0);
+        left: -35px;
+        &:after {
+          left: 50px;
+          right: auto;
+        }
+      }
+    }
+  }
+}

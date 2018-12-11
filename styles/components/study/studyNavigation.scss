@@ -1,0 +1,127 @@
+.study-navigation {
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include align-items(center);
+  @include justify-content(space-around);
+  height: 80px;
+  .hbw-navigation-menu {
+    @include flex(1 1 auto);
+  }
+}
+
+.subject-menu {
+  position: relative;
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include align-items(center);
+  min-width: 32%;
+  height: 100%;
+  padding: 0 5px;
+  cursor: pointer;
+  .current-subject {
+    position: relative;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(flex-start);
+    @include flex(1 1 auto);
+    .image-wrapper {
+      margin: auto 10px;
+      img {
+        width: 40px;
+        vertical-align: middle;
+      }
+    }
+    .text-wrapper {
+      h6 {
+        white-space: nowrap;
+        font-size: 14px;
+        margin: 0px;
+        font-weight: 600;
+      }
+      p {
+        white-space: nowrap;
+        margin: 0px;
+        font-size: 12px;
+      }
+    }
+  }
+  .hbw-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .vr {
+    min-width: 1px;
+    height: 100%;
+    margin: 0 20px;
+  }
+  @include bp($mob) {
+    min-width: 50px;
+    .current-subject {
+      min-width: 60px;
+      @include justify-content(center);
+      .image-wrapper {
+        margin: auto 5px;
+      }
+      .placeholder-content {
+        display: none;
+      }
+      .text-wrapper {
+        display: none;
+      }
+    }
+    .vr {
+      margin: 0 10px;
+    }
+  }
+}
+
+.subject-dropdown {
+  width: 420px;
+  padding: 10px;
+  .subject-selector {
+    .products-row {
+      background: none;
+      border-radius: initial;
+      box-shadow: none;
+      padding: 0px;
+      align-items: baseline;
+      .product-item {
+        vertical-align: top;
+        margin: 0px;
+        .image-wrapper {
+          img {
+            height: 40px;
+          }
+        }
+        .app-name {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .hr {
+    margin-top: 15px;
+  }
+  .semester-selector {
+    padding: 10px 5px 10px 5px;
+    .semester-wrapper {
+      display: inline-block;
+      width: 50%;
+      vertical-align: top;
+      margin: 5px 0px;
+      button {
+        width: calc(100% - 10px);
+        margin: 0px 2px;
+      }
+    }
+  }
+  .icon-loader {
+    margin: 0 10px 0 0;
+    fill: color(brand);
+  }
+  @include bp($mob) {
+    width: 98vw;
+  }
+}

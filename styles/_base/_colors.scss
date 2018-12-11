@@ -1,0 +1,52 @@
+$body-bg: #fafafa;
+$heading-color: #2e2a2a;
+$line-color: rgba(212, 212, 220, 0.75);
+
+/*---- buttons -------*/
+$colors: (
+  brand: (
+    base: #18a2d5,
+    dark: #0b9bd0,
+    light: #4fc1e9
+  ),
+  red: (
+    base: #ef4438,
+    dark: darken(#ef4438, 10%),
+    light: lighten(#ef4438, 10%)
+  ),
+  green: (
+    base: #9dd163,
+    dark: darken(#9dd163, 10%),
+    light: lighten(#9dd163, 10%)
+  ),
+  voilet: (
+    base: #7455c3,
+    dark: darken(#7455c3, 10%),
+    light: lighten(#7455c3, 10%)
+  ),
+  orange: (
+    base: #fbc05f,
+    dark: #f6a742,
+    light: #ffd97c
+  ),
+  default: (
+    base: #f4f4f4,
+    dark: darken(#f4f4f4, 10%),
+    light: lighten(#f4f4f4, 10%)
+  ),
+  text: (
+    base: #586774,
+    light: #919a9e,
+    dark: #222c3c
+  ),
+  facebook: (
+    base: #3b5998,
+    light: lighten(#3b5998, 10%),
+    dark: darken(#3b5998, 10%)
+  ),
+  twitter: (
+    base: #00b6f1,
+    light: lighten(#00b6f1, 10%),
+    dark: darken(#00b6f1, 10%)
+  )
+);

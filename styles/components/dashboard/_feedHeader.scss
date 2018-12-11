@@ -1,0 +1,21 @@
+.hbw-feed-header {
+  width: 100%;
+  .hbw-avatar-wrapper {
+    margin: 0 1rem 0 0;
+  }
+  .heading-name {
+    color: color(text);
+  }
+  .heading-message {
+    color: color(text, light);
+    font-weight: 300;
+  }
+}
+
+@include rtl {
+  .hbw-feed-header {
+    .hbw-avatar-wrapper {
+      margin: 0 0 0 1rem;
+    }
+  }
+}

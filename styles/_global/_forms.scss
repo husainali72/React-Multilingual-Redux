@@ -1,0 +1,203 @@
+.hbw-form {
+  &-input {
+    position: relative;
+    @include flexbox;
+    @include flex-flow(column nowrap);
+    margin-top: 2.5rem;
+    .label {
+      font-size: 1rem;
+      color: color(text, light);
+    }
+    input[type="password"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="email"],
+    input[type="text"] {
+      width: 100%;
+      border: 0;
+      color: color(text);
+      padding: 0 50px 0 0;
+      height: 32px;
+      line-height: 32px;
+      font-size: 1.4rem;
+      &:focus,
+      &:active {
+        border: 0;
+        outline: 0;
+      }
+      &:focus ~ .hr {
+        background: linear-gradient(to left, rgba(79, 193, 233, 0.3), rgba(79, 193, 233, 0.8), rgba(79, 193, 233, 0.3));
+      }
+      &::-webkit-input-placeholder {
+        color: lighten(color(text, light), 20%);
+      }
+      /* safari mobile browser zoom fix */
+      @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        font-size: 16px;
+      }
+    }
+    &.error {
+      .hr {
+        background: linear-gradient(to left, rgba(233, 79, 79, 0.3), rgba(233, 79, 79, 0.8), rgba(233, 79, 79, 0.3));
+      }
+    }
+    .extra-info {
+      position: absolute;
+      right: 0;
+      top: 0;
+      min-width: 40px;
+      height: 100%;
+      > button {
+        padding: 0;
+        min-width: 40px;
+      }
+    }
+    .icon,
+    .fa {
+      color: color(text, light);
+      fill: color(text, light);
+    }
+  }
+  &-radio-group {
+    .label {
+      font-size: 1rem;
+      color: color(text, light);
+    }
+  }
+  &-radio {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    min-width: 70px;
+    padding-left: 30px;
+    .custom-radio {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 0;
+      background: #fff;
+      border: 1px solid $line-color;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      clip: rect(0 0 0 0);
+      opacity: 0;
+      &:checked ~ span.custom-radio:after {
+        position: absolute;
+        content: "";
+        height: 14px;
+        width: 14px;
+        top: 3px;
+        left: 3px;
+        background: color(brand);
+        border-radius: 50%;
+        z-index: 1;
+      }
+      &:disabled {
+        ~ span.custom-radio {
+          background: color(default);
+          opacity: 0.8;
+          cursor: default;
+        }
+        &:checked ~ span.custom-radio:after {
+          background: color(brand, light);
+        }
+      }
+    }
+  }
+  &-checkbox {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    padding-left: 25px;
+    .custom-checkbox {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 0;
+      background: #fff;
+      border: 1px solid $line-color;
+      border-radius: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      clip: rect(0 0 0 0);
+      opacity: 0;
+      &:checked ~ span.custom-checkbox:after {
+        position: absolute;
+        content: "";
+        height: 12px;
+        width: 12px;
+        top: 2px;
+        left: 2px;
+        background: color(green);
+        border-radius: 3px;
+        z-index: 1;
+      }
+      &:disabled {
+        ~ span.custom-checkbox {
+          background: color(default);
+          opacity: 0.8;
+          cursor: default;
+        }
+        &:checked ~ span.custom-checkbox:after {
+          background: color(green, light);
+        }
+      }
+    }
+  }
+}
+.form-error {
+  margin: 3px 0 0 0;
+  font-size: 1.2rem;
+  color: color(red);
+}
+@include rtl {
+  .hbw-form {
+    &-input {
+      input[type="text"],
+      input[type="password"],
+      input[type="tel"],
+      input[type="url"],
+      input[type="email"],
+      input[type="text"] {
+        padding: 0 0 0 50px;
+      }
+      .extra-info {
+        right: auto;
+        left: 0;
+      }
+    }
+    &-radio {
+      padding-left: 0;
+      padding-right: 30px;
+      margin-left: 10px;
+      margin-right: 0;
+      .custom-radio {
+        left: auto;
+        right: 0;
+      }
+    }
+    &-checkbox {
+      padding-left: 0;
+      padding-right: 25px;
+      margin-left: 10px;
+      margin-right: 0;
+      .custom-checkbox {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}

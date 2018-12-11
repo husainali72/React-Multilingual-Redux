@@ -1,0 +1,111 @@
+.online-teacher {
+  &-card {
+    padding: 10px 0;
+    .hbw-card-header {
+      padding: 5px 20px;
+    }
+  }
+  &-list {
+    padding: 15px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    &-item {
+      padding: 0.8rem;
+      cursor: pointer;
+      .teacher-name {
+        margin-top: 5px;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        max-width: 110px;
+        text-align: center;
+      }
+      .hbw-badge {
+        border: 2px solid #fff;
+      }
+    }
+    @include bp($mob) {
+      padding: 5px;
+    }
+  }
+}
+
+.teacher-profile {
+  &-heading {
+    padding: 5px 20px;
+  }
+  &-sidebar {
+    position: relative;
+    padding: 2rem;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 25rem;
+    .close-sidebar-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .teacher-follow-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      &.default-btn {
+        background: rgba(0, 0, 0, 0.4);
+        color: #eee;
+        .icon {
+          stroke: #eee;
+          fill: #eee;
+        }
+      }
+    }
+    .hbw-avatar-wrapper {
+      margin: 10px 0;
+    }
+    .teacher-name {
+      font-weight: 400;
+      font-size: 1.6rem;
+    }
+    .techer-city {
+      font-size: 1.5rem;
+      color: #eee;
+      font-weight: 300;
+    }
+    .teacher-followers {
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 300;
+      font-size: 1.4rem;
+      .hbw-avatar-group {
+        margin-left: -8px;
+      }
+    }
+  }
+}
+
+.hbw-rating {
+  display: inline-block;
+  .icon {
+    margin: 0 2px;
+  }
+}
+
+@include rtl {
+  .teacher-profile-sidebar {
+    .close-sidebar-btn {
+      right: auto;
+      left: 20px;
+      height: 26px;
+      width: 26px;
+    }
+    .teacher-follow-btn {
+      left: auto;
+      right: 20px;
+    }
+    .teacher-followers {
+      .hbw-avatar-group {
+        margin-left: 0;
+        margin-right: -8px;
+      }
+    }
+  }
+}

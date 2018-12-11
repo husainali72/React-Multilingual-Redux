@@ -1,0 +1,74 @@
+.progress-spinner {
+  position: relative;
+  display: inline-block;
+  &__pointer {
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    will-change: transform;
+    top: 0;
+    left: 0;
+    transition: transform 1s linear;
+  }
+  &__pointer:after {
+    position: absolute;
+    content: "";
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    background: linear-gradient(
+      to bottom,
+      #01c3f9,
+      #07c8f4 10%,
+      #0ecdef 20%,
+      #14d2ea 30%,
+      #1ad7e5 40%,
+      #20dde1 50%,
+      #27e2dc 60%,
+      #2de7d7 70%,
+      #33ecd2 80%,
+      #3af1cd 90%,
+      #40f6c8
+    );
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.ripple-group {
+  position: relative;
+  .hbw-avatar-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: -4px 0 0 0px;
+  }
+  .ripple {
+    &-2 {
+      transform-origin: 50% 50%;
+      animation-name: spinner;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+    &-3 {
+      transform-origin: 50% 50%;
+      animation-name: spinner;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-delay: 0.5s;
+    }
+    &-4 {
+      transform-origin: 50% 50%;
+      animation-name: spinner;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-delay: 1s;
+    }
+  }
+}

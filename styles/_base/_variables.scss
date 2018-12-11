@@ -1,0 +1,27 @@
+/*---- button sizes ------------*/
+$btn-size-xl: 56px;
+$btn-size-lg: 42px;
+$btn-size-default: 36px;
+$btn-size-md: 30px;
+$btn-size-sm: 26px;
+$btn-size-tiny: 20px;
+
+/*---- body properties ---------*/
+$line-height: 1.5;
+$font-size: 14px;
+$font-family: "Cairo", sans-serif;
+
+/*----- break points ----------*/
+// prettier-ignore
+$iphone4: (max-width: 399px) and (max-height: 500px);
+// prettier-ignore
+$mob: (max-width: 767px);
+// prettier-ignore
+$tab: (min-width: 768px) and (max-width: 991px);
+
+$verySmallMob: "(max-width: 399px)";
+$mobile: "(min-width: 400px) and (max-width: 767px)";
+$tablet: "(min-width: 768px) and (max-width: 991px)";
+$desktop: "(min-width: 992px) and (max-width: 1199px)";
+$largeDesktop: "(min-width: 1200px)";
+$insaneScreen: "(min-width: 1600px)";

@@ -1,0 +1,112 @@
+.hbw-session-card {
+  width: 100%;
+  padding: 2rem 1rem;
+  .session-class-type {
+    margin-right: 1rem;
+    height: 20px;
+    &.icon-group-class {
+      fill: color(brand);
+      stroke: color(brand);
+    }
+    &.icon-competition {
+      fill: color(orange);
+      stroke: color(orange);
+    }
+  }
+  .hbw-avatar-wrapper {
+    margin: 0 15px 0 5px;
+  }
+  .chapter-name {
+    font-size: 1.4rem;
+    color: color(text);
+  }
+  .teacher-name {
+    color: color(text, light);
+    font-weight: 300;
+    font-size: 1.3rem;
+  }
+  .session-detail {
+    margin-top: 8px;
+    > span {
+      font-size: 1.3rem;
+      color: color(text, light);
+    }
+    .icon {
+      fill: color(text, light);
+      stroke: color(text, light);
+      height: 22px;
+      width: 22px;
+      margin-right: 10px;
+    }
+    &.live {
+      color: color(red);
+      .icon {
+        fill: color(red);
+        stroke: color(red);
+      }
+    }
+  }
+  @include bp($mob) {
+    padding: 2rem 0.5rem;
+    .session-class-type {
+      margin: 0 0 1rem 0;
+      height: 18px;
+    }
+    .hbw-avatar-wrapper {
+      margin: 0 10px 0 5px;
+    }
+    .session-detail {
+      margin-top: 4px;
+      .icon {
+        height: 16px;
+        width: 16px;
+        margin-right: 5px;
+      }
+      .hbw-avatar-group {
+        padding: 0 5px;
+        .avatar-group-count {
+          margin: 0 0 0 12px;
+        }
+      }
+    }
+  }
+}
+
+@include rtl {
+  .hbw-session-card {
+    .session-class-type {
+      margin-left: 1rem;
+      margin-right: 0;
+    }
+    .hbw-avatar-wrapper {
+      margin: 0 5px 0 15px;
+    }
+    .session-detail {
+      .icon {
+        margin-left: 10px;
+        margin-right: 0;
+      }
+    }
+    @include bp($mob) {
+      .session-class-type {
+        margin: 0 0 1rem 0;
+        height: 18px;
+      }
+      .hbw-avatar-wrapper {
+        margin: 0 5px 0 10px;
+      }
+      .session-detail {
+        .icon {
+          margin-left: 5px;
+          margin-right: 0;
+        }
+      }
+      .hbw-avatar-group {
+        padding: 0 5px;
+        .avatar-group-count {
+          margin: 0 12px 0 0;
+        }
+      }
+    }
+  }
+}

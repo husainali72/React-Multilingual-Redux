@@ -1,0 +1,312 @@
+div,
+section,
+header,
+footer,
+article,
+nav,
+ul,
+li,
+a,
+span,
+input,
+textarea,
+label {
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  -webkit-overflow-scrolling: touch; /* iOS velocity scrolling */
+  background-color: $body-bg;
+  font-family: $font-family;
+  color: color(text);
+  font-size: $font-size;
+  line-height: $line-height;
+  overflow-x: hidden;
+}
+
+a:not(.hbw-btn) {
+  color: color(brand, light);
+  text-decoration: none;
+}
+a:hover:not(.hbw-btn) {
+  color: color(brand);
+  text-decoration: underline;
+}
+
+.page {
+  @include flexbox;
+  @include flex-flow(column nowrap);
+  min-height: 100vh;
+  header.hbw-header {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 9998;
+    box-shadow: 0 0 2px 0 rgba(37, 87, 198, 0.22);
+    &.no-shadow {
+      box-shadow: none;
+    }
+  }
+  main.hbw-content {
+    flex: 1 1 auto;
+    position: relative;
+    overflow-x: hidden;
+  }
+  main.showHeader {
+    padding-top: 70px;
+  }
+  main.showBanner {
+    padding-top: 60px;
+  }
+  main.showHeader.showBanner {
+    padding-top: 130px;
+  }
+  @include bp($mob) {
+    main.showHeader {
+      padding-top: 60px;
+    }
+    main.showHeader.showBanner {
+      padding-top: 120px;
+    }
+  }
+}
+
+.color {
+  &-primary {
+    color: color(brand);
+    &-light {
+      color: color(brand, light);
+    }
+  }
+  &-red {
+    color: color(red);
+    &-light {
+      color: color(red, light);
+    }
+  }
+  &-red {
+    color: color(green);
+    &-light {
+      color: color(green, light);
+    }
+  }
+}
+
+.squircle-36 {
+  height: 36px;
+  width: 36px;
+  background: linear-gradient(270deg, color(brand, dark), color(brand, light));
+  color: #fff;
+  clip-path: url(#icons_squircle-36px);
+  text-align: center;
+  line-height: 36px;
+  .icon {
+    fill: #fff;
+    color: #fff;
+  }
+}
+.squircle-42 {
+  height: 42px;
+  width: 42px;
+  background: linear-gradient(270deg, color(brand, dark), color(brand, light));
+  color: #fff;
+  clip-path: url(#icons_squircle-42px);
+  text-align: center;
+  line-height: 42px;
+  .icon {
+    fill: #fff;
+    color: #fff;
+  }
+}
+.squircle-72 {
+  height: 72px;
+  width: 72px;
+  background: linear-gradient(270deg, color(brand, dark), color(brand, light));
+  color: #fff;
+  clip-path: url(#icons_squircle-72px);
+  text-align: center;
+  .icon {
+    fill: #fff;
+    color: #fff;
+  }
+}
+
+.page-content {
+  padding: 40px 0;
+  @include bp($mob) {
+    padding: 10px 0 50px 0;
+  }
+}
+
+p.subtitle {
+  color: color(text, light);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* Input autofill hightlight color reset
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: rgb(255, 255, 255) !important;
+  box-shadow: 0 0 0 30px white inset;
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul,
+li {
+  list-style: none;
+}
+ol {
+  list-style: decimal inside;
+}
+ol,
+ul {
+  padding: 0;
+  margin-top: 0;
+}
+
+/*------ hbw card ---------*/
+.hbw-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.11);
+}
+
+/* Lines
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.vr {
+  position: relative;
+  display: block;
+  height: 80%;
+  width: 1px;
+  background: linear-gradient(to top, rgba(212, 212, 220, 0.3), rgba(212, 212, 220, 0.8), rgba(212, 212, 220, 0.3));
+  border-radius: 50%;
+}
+.hr {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to left, rgba(212, 212, 220, 0.3), rgba(212, 212, 220, 0.8), rgba(212, 212, 220, 0.3));
+  border-radius: 50%;
+}
+
+.hr-or {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to left, rgba(212, 212, 220, 0.3), rgba(212, 212, 220, 0.8), rgba(212, 212, 220, 0.3));
+  border-radius: 50%;
+  margin: 25px 0;
+  &:after {
+    position: absolute;
+    content: attr(data-text);
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border: 1px solid $line-color;
+    background: #fff;
+    border-radius: 50%;
+    height: 30px;
+    min-width: 30px;
+    color: color(text, light);
+    text-align: center;
+    line-height: 28px;
+    font-weight: 300;
+  }
+}
+
+.vr-or {
+  position: relative;
+  display: block;
+  height: 80%;
+  width: 1px;
+  background: linear-gradient(to top, rgba(212, 212, 220, 0.3), rgba(212, 212, 220, 0.8), rgba(212, 212, 220, 0.3));
+  border-radius: 50%;
+  margin: 0 25px;
+  &:after {
+    position: absolute;
+    content: attr(data-text);
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border: 1px solid $line-color;
+    background: #fff;
+    border-radius: 50%;
+    height: 30px;
+    min-width: 30px;
+    color: color(text, light);
+    text-align: center;
+    line-height: 28px;
+    font-weight: 300;
+  }
+}
+
+.shodowed-container {
+  box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.1), 0px 3px 20px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.hbw-section {
+  padding: 20px 15px;
+  overflow-x: hidden;
+  .heading {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .subheading {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+  @include bp($mob, $tab) {
+    .heading {
+      font-size: 20px;
+      line-height: 60px;
+    }
+    .subheading {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+}
+
+.inner-container {
+  position: relative;
+  width: calc(100% - 20px);
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 5px;
+  /* For devices larger than 400px */
+  @include bp($mob, $tab) {
+    padding: 0 10px;
+  }
+}
+
+#titlediv {
+  display: none !important;
+}
+.OT_publisher,
+.OT_subscriber {
+  display: none;
+}
+
+@include bp($mob) {
+  button,
+  div,
+  svg,
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+}

@@ -1,0 +1,293 @@
+.guest-route-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding-top: 60px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: auto;
+  .vr {
+    align-self: center;
+  }
+  @include bp($mob) {
+    padding-top: 70px;
+  }
+}
+.login-form {
+  width: 380px;
+  margin: 4rem auto 2rem auto;
+  form {
+    margin: 6rem 0 7rem 0;
+  }
+  .hbw-btn-facebook,
+  .hbw-btn-twitter {
+    min-width: 150px;
+  }
+  @include bp($mob) {
+    width: calc(100% - 40px);
+    margin: 2rem auto 2rem auto;
+    .hbw-btn-facebook,
+    .hbw-btn-twitter {
+      min-width: 130px;
+    }
+  }
+  .submit-button-block {
+    @include bp($mob) {
+      @include justify-content(center);
+      button {
+        margin-top: 10px;
+      }
+      .hbw-form-radio-group {
+        text-align: center;
+        margin: 0 1rem;
+        > .flex-row {
+          @include justify-content(center);
+        }
+      }
+    }
+  }
+}
+
+.onboarding-messages {
+  max-width: 380px;
+  margin: 10rem auto 3rem auto;
+  text-align: center;
+  img {
+    width: auto;
+    height: 300px;
+    margin-bottom: 10px;
+  }
+  p.subtitle {
+    margin-top: 0;
+    max-width: 250px;
+  }
+  .nav-dots {
+    text-align: center;
+    margin-top: 20px;
+    > span {
+      display: inline-block;
+      height: 8px;
+      width: 8px;
+      background-color: color(default, dark);
+      border-radius: 16px;
+      cursor: pointer;
+      margin: 0 5px;
+      transform-origin: 50% 50%;
+      transition: transform 0.3s ease;
+      &:hover:not(.active) {
+        transform: scale(1.5);
+        transition: transform 0.4s ease;
+      }
+      &.active {
+        width: 16px;
+        background-color: color(brand);
+      }
+    }
+  }
+}
+
+.complete-profile-form {
+  position: relative;
+  overflow: hidden;
+  @include bp($mob) {
+    margin: 2rem auto 4rem auto;
+  }
+  form {
+    margin: 0px;
+  }
+  .outer-form-wrapper {
+    width: 200%;
+    height: 100%;
+    display: flex;
+    .main-form-view {
+      width: 50%;
+      transform: translateX(-100%);
+      transition: transform 0.2s ease-in-out;
+      text-align: center;
+      .hbw-form-input {
+        width: 100%;
+      }
+      .upload-image {
+        cursor: pointer;
+        input {
+          opacity: 0;
+          position: absolute;
+          pointer-events: none;
+          width: 1px;
+          height: 1px;
+        }
+        input[type="file"] + label {
+          width: 100%;
+          height: 100%;
+          display: block;
+          .upload-icon {
+            @include squircle(25px, 30px);
+            display: inline-block;
+            padding: 15px;
+            background: #f6f6f6;
+            overflow: hidden;
+            position: relative;
+          }
+        }
+      }
+      .gender-wrapper {
+        .gender-inner-wrapper {
+          display: block;
+          margin: 20px 0px;
+          text-align: center;
+          .gender-toggle {
+            display: inline-block;
+            color: color(text);
+            padding: 0 30px 0 30px;
+            border-radius: 6px;
+            position: relative;
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.11);
+            .hbw-form-radio {
+              padding: 20px 30px 20px 30px;
+              &.active {
+                color: color(brand);
+                border-bottom: 1px solid color(brand);
+              }
+            }
+          }
+        }
+      }
+      .hbw-form-input {
+        text-align: start;
+        input {
+          cursor: pointer;
+          background: none;
+        }
+        &.grade-controls {
+          position: relative;
+          .grade {
+            cursor: pointer;
+            height: 32px;
+            align-items: center;
+            display: flex;
+            opacity: 0.33;
+            &.active {
+              opacity: 1;
+            }
+          }
+          .grade.focus ~ .hr {
+            background: linear-gradient(
+              to left,
+              rgba(79, 193, 233, 0.3),
+              rgba(79, 193, 233, 0.8),
+              rgba(79, 193, 233, 0.3)
+            );
+          }
+          .grade.error ~ .hr {
+            background: linear-gradient(
+              to left,
+              rgba(233, 79, 79, 0.3),
+              rgba(233, 79, 79, 0.8),
+              rgba(233, 79, 79, 0.3)
+            );
+          }
+          .grades-list {
+            position: absolute;
+            top: 48px;
+            right: 0px;
+            width: 100%;
+            min-height: 90px;
+            max-height: 165px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background: #fff;
+            z-index: 2;
+            border: 1px solid #eaeaee;
+            border-radius: 5px;
+            li {
+              padding: 5px 10px;
+              margin: 5px 0;
+              cursor: pointer;
+              &:hover {
+                background: rgba(24, 162, 213, 0.2);
+              }
+            }
+          }
+        }
+        @include bp($mob) {
+          padding: 0px 10px;
+          box-sizing: border-box;
+        }
+      }
+      &.active {
+        transition: transform 0.2s ease-in-out;
+        transform: translateX(0px);
+      }
+    }
+    .form-error {
+      text-align: left;
+      width: 100%;
+    }
+    .list-view {
+      // flex: auto;
+      width: 50%;
+      display: block;
+      transform: translateX(0px);
+      transition: transform 0.2s ease-in-out;
+      .back-to-form {
+        margin-bottom: 30px;
+        .icon {
+          transform: rotate(-90deg) !important;
+        }
+      }
+      .search-input {
+        margin-bottom: 10px;
+      }
+      .list-area {
+        height: 400px;
+        .items-list {
+          display: block;
+          width: 100%;
+          height: 100%;
+          overflow-y: auto;
+          overflow-x: hidden;
+          &__item {
+            margin-bottom: 5px;
+            padding: 5px;
+            cursor: pointer;
+            width: 100%;
+            &:hover {
+              background: rgba(24, 162, 213, 0.2);
+            }
+          }
+        }
+      }
+      &.active {
+        transition: transform 0.2s ease-in-out;
+        transform: translateX(-100%);
+      }
+    }
+  }
+}
+
+@include rtl {
+  .complete-profile-form {
+    .outer-form-wrapper {
+      .main-form-view {
+        transform: translateX(100%);
+        &.active {
+          transform: translateX(0);
+        }
+      }
+      .form-error {
+        text-align: right;
+      }
+      .list-view {
+        &.active {
+          transition: transform 0.2s ease-in-out;
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
+}

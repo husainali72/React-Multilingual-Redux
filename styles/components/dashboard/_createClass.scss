@@ -1,0 +1,196 @@
+.create-class {
+  &-header {
+    padding: 0 20px;
+    height: 70px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    .squircle-42 {
+      margin: 0 10px;
+      border-radius: 12px;
+      &.competition {
+        background: linear-gradient(270deg, color(voilet, dark), color(voilet, light));
+      }
+    }
+    .title {
+      font-size: 1.4rem;
+      margin: 3px 0;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-bottom: 3px;
+    }
+    .icon-plus {
+      cursor: pointer;
+      stroke: color(brand, light);
+      &:hover {
+        stroke: color(brand, dark);
+      }
+    }
+  }
+  &-body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fefdfe;
+    .class-type-selector {
+      height: 55px;
+      width: 280px;
+      margin: 15px auto;
+    }
+    .flashcard-item {
+      position: relative;
+      flex-shrink: 0;
+      height: 190px;
+      width: 140px;
+      border-radius: 5px;
+      background: linear-gradient(to top, color(brand, light), color(brand, dark));
+      padding: 15px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      margin: 0 10px;
+      border: 1px solid #f1f1f1;
+    }
+    .question-item {
+      max-width: 400px;
+      margin: 10px auto;
+    }
+  }
+  &-btn {
+    position: fixed;
+    bottom: 30px;
+    z-index: 998;
+    button {
+      margin: 0 10px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+    .hbw-btn-green {
+      box-shadow: 0 2px 12px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+  &__subject-selection {
+    padding: 1.5rem 1rem 2rem 1rem;
+    border-bottom: 1px solid $line-color;
+    .subject-menu {
+      width: 100%;
+      @include bp($mob) {
+        .current-subject {
+          @include justify-content(start);
+          .placeholder-content {
+            @include flexbox;
+          }
+          .text-wrapper {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.chapter-card {
+  &-container {
+    overflow-y: hidden;
+    overflow-x: auto;
+    min-height: 250px;
+    height: 280px;
+  }
+  &-item {
+    position: relative;
+    flex-shrink: 0;
+    height: 190px;
+    width: 140px;
+    border-radius: 15px;
+    background: linear-gradient(to top, color(brand, light), color(brand, dark));
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 10px;
+    will-change: transform, margin;
+    transform-origin: 50% 50%;
+    overflow: hidden;
+    transition: transform, margin 0.3s linear;
+    font-size: 1.1rem;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    small {
+      margin-bottom: 5px;
+      font-size: 1.3rem;
+    }
+    span {
+      font-size: 1.5rem;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5);
+    }
+    &.active {
+      margin: 10px;
+      transform: scale(1.1);
+      transition: transform, margin 0.3s linear;
+      box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.15);
+      &:after {
+        top: auto;
+        bottom: 0;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+      }
+      span,
+      small {
+        z-index: 2;
+      }
+    }
+  }
+}
+
+.lesson-card {
+  &-container {
+    .icon-arrow-down {
+      fill: color(text);
+    }
+  }
+  &-item {
+    padding: 8px 20px;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    &:hover {
+      border-left: 4px solid rgb(79, 193, 250);
+      background: linear-gradient(to right, rgba(112, 112, 112, 0.05), transparent);
+    }
+  }
+}
+
+.friend {
+  &-invite-container {
+    width: 80%;
+    margin: 15px 0 80px 0;
+  }
+  &-list-item {
+    padding: 10px 0;
+  }
+}
+
+@include rtl {
+  .lesson-card {
+    &-item {
+      border-right: 4px solid transparent;
+      border-left: 0;
+      cursor: pointer;
+      &:hover {
+        border-right: 4px solid rgb(79, 193, 250);
+        border-left: 0;
+        background: linear-gradient(to left, rgba(112, 112, 112, 0.05), transparent);
+      }
+    }
+  }
+}

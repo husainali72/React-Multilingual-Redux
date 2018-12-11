@@ -1,0 +1,131 @@
+.hbw-navigation-bar {
+  position: relative;
+  background: #fff;
+  height: 70px;
+  @include align-items(center);
+  &-special {
+    height: 70px;
+    .hbw-btn-link {
+      font-size: 1.5rem;
+      color: color(brand, light);
+      &:active {
+        text-decoration: none;
+        color: color(brand, dark);
+      }
+    }
+    .hbw-navigation-menu {
+      height: 40px;
+      &__item {
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+    }
+  }
+  .study-navbar {
+    padding: 0 2rem;
+    small {
+      color: color(text, light);
+      padding: 2px 0;
+    }
+  }
+  .icon-hbw-en {
+    height: 40px;
+    width: 160px;
+  }
+  .icon-hbw-ar {
+    height: 40px;
+    width: 160px;
+  }
+  .nav-menu-wrapper {
+    height: 100%;
+  }
+  @include bp($tab) {
+    padding: 0 10px;
+    .nav-menu-wrapper {
+      min-width: 25rem;
+    }
+  }
+  @include bp($mob) {
+    height: 60px;
+    padding: 0 10px;
+    &-special {
+      background: #fff;
+    }
+    .hbw-navigation-menu {
+      &.study-navbar-mobile {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        height: 45px;
+        width: 100vw;
+        z-index: 9999;
+        background: #fff;
+        border-top: 1px solid #eee;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+.hbw-main-search {
+  position: relative;
+  min-width: 70px;
+  text-align: center;
+  fill: color(brand, light);
+  margin-top: 5px;
+  vertical-align: middle;
+  @include bp($mob) {
+    min-width: 25px;
+  }
+}
+
+.hbw-user-menu {
+  padding: 0 10px;
+  margin: 0 10px;
+  position: relative;
+  cursor: pointer;
+  @include bp($mob, $tab) {
+    padding: 0;
+    margin: 0 5px;
+  }
+}
+
+@include rtl {
+  .hbw-user-menu {
+    position: relative;
+    @include bp($mob) {
+      padding: 0;
+      margin: 0 5px;
+    }
+  }
+}
+
+.hbw-btn .icon.icon-arrow-down {
+  stroke: color(brand);
+  fill: color(brand);
+}
+
+.nav-login-button-wrapper {
+  padding: 0 20px;
+  > button {
+    margin: 0 5px;
+  }
+}
+.nav-profile-info {
+  margin: 0 5px;
+  max-width: 150px;
+  font-size: 1.2rem;
+  .title {
+    color: color(text, dark);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .subtitle {
+    color: color(text, light);
+    font-size: 0.9em;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

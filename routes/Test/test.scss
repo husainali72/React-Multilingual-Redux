@@ -1,0 +1,21 @@
+@import "../../styles/_base/index.scss";
+
+.box1 {
+  height: 300px;
+  width: 300px;
+  margin: auto;
+}
+
+.ac {
+  border: 1px solid #f1f1f1;
+  height: 40px;
+  width: 100%;
+  margin: 5px 0;
+  padding: 0 10px;
+}
+
+.test {
+  button {
+    margin: 5px 10px;
+  }
+}

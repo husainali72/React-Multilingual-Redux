@@ -1,0 +1,79 @@
+.Popover {
+  z-index: 9999;
+  direction: ltr;
+  &-body {
+    background: #fff;
+    min-width: 180px;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 20px 3px rgba(100, 100, 100, 0.1);
+    z-index: 9999;
+  }
+  &-tip {
+    z-index: 9999;
+  }
+  &-tipShape {
+    fill: #fff;
+  }
+}
+
+@include rtl {
+  .Popover {
+    direction: ltr;
+    &-body {
+      direction: rtl;
+    }
+  }
+}
+
+ul.hbw-list {
+  margin: 0;
+  li {
+    height: 40px;
+    line-height: 30px;
+    font-size: 1.4rem;
+    padding: 0 10px;
+    cursor: pointer;
+    .icon {
+      height: 14px;
+      stroke: color(text, light);
+      fill: color(text, light);
+    }
+    .fa {
+      width: 14px;
+      margin: 0 8px;
+      color: color(text, light);
+    }
+    > span,
+    a {
+      color: color(text, light);
+      &:hover {
+        color: color(brand);
+      }
+    }
+    &:hover,
+    &.active {
+      color: color(brand);
+      .icon {
+        stroke: color(brand, light);
+        fill: color(brand, light);
+      }
+      .fa {
+        color: color(brand, light);
+      }
+      > span,
+      a {
+        color: color(brand);
+      }
+    }
+    &.seperator {
+      height: 5px;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    &.separator {
+      height: 2px;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+$font-path: "/assets/fonts/";
+
+@font-face {
+  font-family: "Cairo";
+  src: url($font-path+"Cairo-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url($font-path+"Cairo-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url($font-path+"Cairo-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url($font-path+"Cairo-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}

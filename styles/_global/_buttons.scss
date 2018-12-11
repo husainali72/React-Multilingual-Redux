@@ -1,0 +1,187 @@
+.hbw-btn {
+  display: inline-block;
+  margin: 0;
+  border-radius: 6px;
+  user-select: none;
+  font-size: 12px;
+  min-width: 60px;
+  text-align: center;
+  font-weight: 400;
+  height: $btn-size-default;
+  line-height: $btn-size-default - 2px;
+  text-transform: capitalize;
+  padding: 0 10px;
+  border: 1px solid color(text, light);
+  text-decoration: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: width;
+  transition: width 0.3s ease;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: 0;
+  }
+  > .icon {
+    height: 16px;
+    width: 20px;
+    margin: 0 3px;
+  }
+  > .fa {
+    margin: 0 3px;
+  }
+  &-square {
+    border-radius: 0;
+  }
+  &-rounded {
+    border-radius: 40px;
+  }
+  &-primary {
+    @include generate-btn-colors(brand, #fff, 180deg);
+  }
+  &-default {
+    @include generate-btn-colors(default, color(text));
+  }
+  &-blue {
+    @include generate-btn-colors(brand);
+  }
+  &-green {
+    @include generate-btn-colors(green);
+  }
+  &-red {
+    @include generate-btn-colors(red);
+  }
+  &-voilet {
+    @include generate-btn-colors(voilet, #fff, 180deg);
+  }
+  &-facebook {
+    @include generate-btn-colors(facebook);
+  }
+  &-twitter {
+    @include generate-btn-colors(twitter);
+  }
+  &-xl,
+  &-extra-large {
+    @include generate-btn-sizes($btn-size-xl);
+    font-size: 15px;
+    min-width: 100px;
+    padding: 0 30px;
+  }
+  &-lg,
+  &-large {
+    @include generate-btn-sizes($btn-size-lg);
+    font-size: 14px;
+    min-width: 100px;
+    padding: 0 20px;
+  }
+  &-md,
+  &-medium {
+    @include generate-btn-sizes($btn-size-md);
+  }
+  &-sm,
+  &-small {
+    @include generate-btn-sizes($btn-size-sm);
+    font-size: 11px;
+  }
+  &-link {
+    border: 0;
+    color: color(brand);
+    background: transparent;
+    height: $btn-size-sm;
+    line-height: $btn-size-sm;
+    text-transform: none;
+    &:hover {
+      color: color(brand, dark);
+    }
+    &:active {
+      text-decoration: underline;
+    }
+  }
+  &-fab {
+    @include generate-fab-btn-sizes($btn-size-default);
+    padding: 0;
+    min-width: auto;
+    border-radius: 50%;
+    &-lg,
+    &-large {
+      @include generate-fab-btn-sizes($btn-size-lg);
+    }
+    &-md,
+    &-medium {
+      @include generate-fab-btn-sizes($btn-size-md);
+    }
+    &-sm,
+    &-small {
+      @include generate-fab-btn-sizes($btn-size-sm);
+    }
+    &-tiny {
+      @include generate-fab-btn-sizes($btn-size-tiny);
+      font-size: 10px;
+      .icon {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+  &-block {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  &-loader {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -3px 4px 0 4px;
+    vertical-align: middle;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-color: #fff transparent transparent transparent;
+    animation: round-ring 1s linear infinite;
+  }
+  &-outlined &-loader {
+    border-color: color(text) transparent transparent transparent;
+  }
+}
+
+.hbw-btn-group {
+  direction: ltr;
+  .hbw-btn {
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    & + .hbw-btn {
+      margin: 0 0 0 -1px;
+    }
+    &:first-child {
+      border-radius: 6px 0 0 6px;
+      border-left: 0;
+    }
+    &:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+  }
+}
+
+@include rtl {
+  .hbw-btn-group {
+    direction: rtl;
+    .hbw-btn {
+      border: 0;
+      border-left: 1px solid rgba(255, 255, 255, 0.4);
+      & + .hbw-btn {
+        margin: 0 -1px 0 0;
+      }
+      &:first-child {
+        border-radius: 0 6px 6px 0;
+      }
+      &:last-child {
+        border-radius: 6px 0 0 6px;
+        border-left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.main-sidebar-wrapper {
+    width: 350px;
+    margin-right: 30px;
+    display: block;
+    padding: 5px 0;
+    > div {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+    @include bp($mob, $tab) {
+        display: none;
+    }
+  }
+  
+  @include rtl {
+    .main-sidebar-wrapper {
+      margin-right: auto;
+      margin-left: 30px;
+    }
+  }

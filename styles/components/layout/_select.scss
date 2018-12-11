@@ -1,0 +1,53 @@
+@import "../../_base/index.scss";
+
+.hbw-select {
+  position: relative;
+  display: inline-block;
+  min-width: 140px;
+  border: 1px solid #ececec;
+  padding: 0 15px;
+  background-color: #fff;
+  height: 40px;
+  cursor: pointer;
+  .select-header {
+    height: inherit;
+    @include flexbox;
+    @include flex-flow(row nowrap);
+    @include align-items(center);
+    &__title {
+      color: #444;
+      display: inline-block;
+      @include flex(1 1 auto);
+    }
+    &__icon {
+      fill: #666;
+      margin: 0 5px;
+      height: 12px;
+      width: 14px;
+    }
+  }
+  .select-list {
+    font-size: 0.9em;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    &__item {
+      height: 36px;
+      line-height: 36px;
+      padding: 0 10px;
+      color: #666;
+      border-bottom: 1px solid #fff;
+      &:hover {
+        background-color: lighten(color(brand, light), 35%);
+      }
+      &.selected {
+        background-color: color(brand);
+        color: #fff;
+      }
+    }
+  }
+}

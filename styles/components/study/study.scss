@@ -1,0 +1,264 @@
+$chapter-height: 250px;
+$chapter-width: $chapter-height/4 * 3;
+$chapter-content-height: $chapter-height * 0.65;
+
+.study-wrapper {
+  .sections-container {
+    .section-item {
+      .chapter-item {
+        position: relative;
+        display: flex;
+        margin-top: 60px;
+        .chapter-cover {
+          position: relative;
+          z-index: 1;
+          width: $chapter-width;
+          min-width: $chapter-width;
+          height: $chapter-height;
+          border-radius: 10px;
+          box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.11);
+          overflow: hidden;
+          &-overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            .progress-count {
+              font-weight: 600;
+              @include align-items(center);
+              @include justify-content(center);
+              @include flex-flow(column nowrap);
+              p {
+                text-align: center;
+                line-height: 1.2;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+              }
+              small {
+                font-size: 60%;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+              }
+            }
+          }
+          img {
+            height: auto;
+            width: 100%;
+            min-height: 100%;
+          }
+          &.maths_sa {
+            @include linear-gradient(top, bottom, #4fc1e9, #0b9bd0);
+          }
+          &.physics_sa {
+            @include linear-gradient(top, bottom, #ffd97c, #f6a742);
+          }
+          &.chemistry_sa {
+            @include linear-gradient(top, bottom, #a0d468, #6eaf27);
+          }
+          &.english_sa {
+            @include linear-gradient(top, bottom, #ed5568, #d62739);
+          }
+          &.science_sa {
+            @include linear-gradient(top, bottom, #c9a684, #986d4d);
+          }
+          &.qudrat {
+            @include linear-gradient(top, bottom, #656d78, #2f3640);
+          }
+          &.tahsili {
+            @include linear-gradient(top, bottom, #656d78, #2f3640);
+          }
+        }
+        .chapter-body {
+          line-height: 1rem;
+          padding: 0px 40px 0px 160px;
+          flex: 1 1 auto;
+          margin-left: -90px;
+          margin-top: 45px;
+          height: $chapter-content-height;
+          transition: height 1.5s linear;
+          .ondemand-count {
+            position: absolute;
+            border-radius: 0 2px 4px 4px;
+            top: -4px;
+            right: 4rem;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: -4px;
+              border-style: solid;
+              border-width: 2px;
+              border-color: transparent #ef4438 #ef4438 transparent;
+            }
+          }
+          &__heading {
+            height: $chapter-content-height;
+            .text {
+              h4 {
+                margin: 0 0 10px 0;
+              }
+            }
+            .hbw-btn-fab.hbw-btn-primary {
+              border: 1px solid transparent;
+            }
+          }
+          &__lessons {
+            .lesson-item {
+              background-color: #fbfbfb;
+              margin-bottom: 20px;
+              border-radius: 5px;
+              .lesson-main-content {
+                padding: 15px 10px;
+                .info {
+                  .name {
+                    margin: 0px;
+                    line-height: 1.5;
+                    padding: 0 0.5rem;
+                    cursor: pointer;
+                  }
+                }
+              }
+              .lesson-links {
+                padding: 15px;
+                height: 75px;
+                .link-item {
+                  cursor: pointer;
+                  margin: 0px 10px;
+                  span {
+                    margin-top: 3px;
+                    font-size: 10px;
+                    color: color(text, light);
+                    display: block;
+                  }
+                  a:hover {
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+          }
+          &.show {
+            transition: height 1.5s linear;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+  .no-content {
+    height: 350px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    h4 {
+      width: 100%;
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+  @include bp($mob) {
+    .sections-container {
+      padding-bottom: 4rem;
+      .section-item {
+        .chapter-item {
+          margin-top: 40px;
+          .chapter-cover {
+            position: absolute;
+            width: 100px;
+            min-width: 100px;
+            height: 140px;
+          }
+          .chapter-body {
+            height: 100px;
+            padding: 0px 10px 0px 10px;
+            margin: 20px 0 0 0;
+            .ondemand-count {
+              height: 2rem;
+              right: 2.5rem;
+              padding: 0 0.8rem;
+              line-height: 2rem;
+              top: -2px;
+              :after {
+                border-width: 1px;
+                left: -2px;
+              }
+            }
+            &__heading {
+              height: 100px;
+              padding: 0px 10px 0px 100px;
+              .text {
+                font-size: 1.1rem;
+                h4 {
+                  font-size: 1.2rem;
+                  margin: 0;
+                }
+              }
+            }
+            &.show {
+              .chapter-body__heading {
+                margin-bottom: 35px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include rtl {
+  .study-wrapper {
+    .sections-container {
+      .section-item {
+        .chapter-item {
+          .chapter-cover {
+            right: 0;
+          }
+          .chapter-body {
+            padding: 0px 160px 0px 40px;
+            margin-right: -90px;
+            margin-left: 0px;
+            .ondemand-count {
+              left: 4rem;
+              right: auto;
+              border-top-right-radius: 0;
+              border-top-left-radius: 2px;
+              &:after {
+                left: auto;
+                right: -4px;
+                border-color: transparent transparent #ef4438 #ef4438;
+              }
+            }
+          }
+        }
+      }
+      @include bp($mob) {
+        .section-item {
+          .chapter-item {
+            .chapter-body {
+              padding: 0px 10px 0px 10px;
+              margin: 20px 0 0 0;
+              .ondemand-count {
+                right: auto;
+                left: 2.5rem;
+                &:after {
+                  right: -2px;
+                  border-width: 1px;
+                }
+              }
+              &__heading {
+                height: 100px;
+                padding: 0px 100px 0px 10px;
+              }
+              &.show {
+                .chapter-body__heading {
+                  margin-bottom: 35px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

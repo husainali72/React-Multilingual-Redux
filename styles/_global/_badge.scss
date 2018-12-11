@@ -1,0 +1,87 @@
+.hbw-badge {
+  display: inline-block;
+  margin: 0;
+  border-radius: 4px;
+  user-select: none;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 400;
+  touch-action: manipulation;
+  white-space: nowrap;
+  color: color(text);
+  border: 1px solid color(text, light);
+  padding: 0 10px;
+  font-family: Arial, sans-serif;
+  height: $btn-size-sm + 4px;
+  line-height: $btn-size-sm + 4px;
+  &-blue,
+  &-primary {
+    border: 0;
+    background-color: color(brand);
+    color: #fff;
+  }
+  &-green {
+    border: 0;
+    background-color: color(green);
+    color: #fff;
+  }
+  &-red {
+    border: 0;
+    background-color: color(red);
+    color: #fff;
+  }
+  &-default {
+    border: 0;
+    background-color: color(default);
+    color: color(text);
+  }
+  &-large,
+  &-lg {
+    padding: 0 10px;
+    height: $btn-size-default;
+    line-height: $btn-size-default;
+  }
+  &-medium,
+  &-md {
+    padding: 0 10px;
+    height: $btn-size-sm;
+    line-height: $btn-size-sm;
+  }
+  &-sm,
+  &-sm {
+    padding: 0 10px;
+    height: $btn-size-tiny;
+    line-height: $btn-size-tiny;
+  }
+  &-rounded {
+    border-radius: 50%;
+    padding: 0;
+    line-height: $btn-size-md;
+    height: $btn-size-md;
+    width: $btn-size-md;
+    &-xl {
+      padding: 0 10px;
+      width: $btn-size-lg;
+      height: $btn-size-lg;
+      line-height: $btn-size-lg;
+    }
+    &-large,
+    &-lg {
+      width: $btn-size-default;
+      height: $btn-size-default;
+      line-height: $btn-size-default;
+    }
+    &-medium,
+    &-md {
+      width: $btn-size-sm;
+      height: $btn-size-sm;
+      line-height: $btn-size-sm;
+    }
+    &-small,
+    &-sm {
+      width: $btn-size-tiny;
+      height: $btn-size-tiny;
+      line-height: $btn-size-tiny;
+    }
+  }
+}
